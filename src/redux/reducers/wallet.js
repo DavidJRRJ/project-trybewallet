@@ -1,7 +1,8 @@
-import { WALLET_CURRENCIES } from '../actions/actionTypes';
+import { WALLET_CURRENCIES, WALLET_EXCHANGE, WALLET_DATA } from '../actions/actionTypes';
 
 const INITIAL_STATE = {
   currencies: [],
+  expenses: [],
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
@@ -10,6 +11,16 @@ const wallet = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       currencies: action.currencies,
+    };
+  case WALLET_EXCHANGE:
+    return {
+      ...state,
+      exchangeRates: action.exchanges,
+    };
+  case WALLET_DATA:
+    return {
+      ...state,
+      expenses: [...state.expenses, { ...action.data }],
     };
   default:
     return state;
