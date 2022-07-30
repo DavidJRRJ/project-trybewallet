@@ -18,7 +18,7 @@ class Login extends React.Component {
     this.setState({
       [name]: value,
     });
-    console.log(this.state);
+    // console.log(this.state);
     this.verifyPassword();
     this.verifyEmail();
   };
@@ -33,7 +33,7 @@ class Login extends React.Component {
   verifyPassword = () => {
     const { password } = this.state;
     const passwordLength = 6;
-    console.log(password);
+    // console.log(password);
     if (password.length >= passwordLength) {
       // this.setState({
       //   buttonOff: false,
