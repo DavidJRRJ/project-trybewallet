@@ -5,3 +5,5 @@ export const WALLET_CURRENCIES = 'WALLET_CURRENCIES';
 export const WALLET_EXCHANGE = 'WALLET_EXCHANGE';
 
 export const WALLET_DATA = 'WALLET_DATA';
+
+export const DELETE_DATA = 'DELETE_DATA';

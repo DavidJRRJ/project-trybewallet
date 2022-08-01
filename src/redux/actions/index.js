@@ -1,4 +1,5 @@
 import {
+  DELETE_DATA,
   USER_EMAIL,
   WALLET_CURRENCIES,
   // WALLET_EXCHANGE,
@@ -27,6 +28,11 @@ export const actionWalletData = (data) => ({
 
 export const requestAction = () => ({
   type: 'REQUEST_INFO',
+});
+
+export const deleteAction = (id) => ({
+  type: DELETE_DATA,
+  id,
 });
 
 export const errorAction = (error) => ({

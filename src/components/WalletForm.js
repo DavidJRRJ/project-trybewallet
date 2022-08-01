@@ -26,7 +26,7 @@ class WalletForm extends Component {
     this.setState({
       [name]: value,
     });
-    console.log({ [name]: value });
+    // console.log({ [name]: value });
   };
 
   handleclick = async () => {
@@ -35,7 +35,7 @@ class WalletForm extends Component {
     const { id } = this.state;
     const response = await fetch('https://economia.awesomeapi.com.br/json/all');
     const exchangeRates = await response.json();
-    console.log(exchangeRates);
+    // console.log(exchangeRates);
     this.setState({
       id: id + 1,
       exchangeRates,
