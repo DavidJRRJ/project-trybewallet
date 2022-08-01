@@ -7,33 +7,43 @@ class Table extends Component {
     const { expenses } = this.props;
     return (
       <div>
-        <tr>
-          <th>Descrição</th>
-          <th>Tag</th>
-          <th>Método de pagamento</th>
-          <th>Valor</th>
-          <th>Moeda</th>
-          <th>Câmbio utilizado</th>
-          <th>Valor convertido</th>
-          <th>Moeda de conversão</th>
-          <th>Editar/Excluir</th>
-        </tr>
-
-        {expenses.lenght === 0 ? <p>Vazio</p>
-          : expenses.map((curr) => (
-            <tr key={ curr.id }>
-              <td>{curr.description}</td>
-              <td>{curr.tag}</td>
-              <td>{curr.method}</td>
-              <td>{Number(curr.value)}</td>
-              <td>{curr.currency}</td>
-              <td>{Number(curr.exchangeRates[curr.currency].ask).toFixed(2)}</td>
-              {Number(curr.exchangeRates[curr.currency].ask * curr.value).toFixed(2)}
-              <td>{ curr.exchangeRates[curr.currency].name }</td>
-              <td><button type="button">Delete</button></td>
-            </tr>
-          ))}
-
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Tag</th>
+            <th>Método de pagamento</th>
+            <th>Valor</th>
+            <th>Moeda</th>
+            <th>Câmbio utilizado</th>
+            <th>Valor convertido</th>
+            <th>Moeda de conversão</th>
+            <th>Editar/Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+          {expenses.lenght === 0 ? (
+            <p>Vazio</p>
+          ) : (
+            expenses.map((curr) => (
+              <tr key={ curr.id }>
+                <td>{curr.description}</td>
+                <td>{curr.tag}</td>
+                <td>{curr.method}</td>
+                <td>{Number(curr.value).toFixed(2)}</td>
+                <td>{curr.currency}</td>
+                <td>
+                  {Number(curr.exchangeRates[curr.currency].ask).toFixed(2)}
+                </td>
+                <td>
+                  {Number(
+                    curr.exchangeRates[curr.currency].ask * curr.value,
+                  ).toFixed(2)}
+                </td>
+                <td>{curr.exchangeRates[curr.currency].name}</td>
+              </tr>
+            ))
+          )}
+        </tbody>
       </div>
     );
   }
