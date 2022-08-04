@@ -35,12 +35,10 @@ class Login extends React.Component {
     const { password } = this.state;
     const passwordLength = 6;
     // console.log(password);
-    if (password.length >= passwordLength) {
-      // this.setState({
-      //   buttonOff: false,
-      // });
-      return true;
-    }
+    if (password.length >= passwordLength) return true;
+    // this.setState({
+    //   buttonOff: false,
+    // });
     return false;
   };
 
@@ -48,12 +46,10 @@ class Login extends React.Component {
     const { email } = this.state;
     const emailRegex = /[a-zA-Z0-9]+[.]?([a-zA-Z0-9]+)?[@][a-z]{3,9}[.][a-z]{2,5}/g;
     const emailCheck = emailRegex.test(email);
-    if (emailCheck === true) {
-      // this.setState({
-      //   buttonOff: false,
-      // });
-      return true;
-    }
+    if (emailCheck === true) return true;
+    // this.setState({
+    //   buttonOff: false,
+    // });
     return false;
   };
 
