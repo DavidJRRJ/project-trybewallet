@@ -1,0 +1,73 @@
+body {
+  background: #201b2c;
+  border: 0;
+  color: white;
+  margin: 0;
+}
+
+.header {
+  align-items: center;
+  border: solid 1px grey;
+  border-radius: 5px;
+  display: flex;
+  height: 2em;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.header-email {
+  padding-left: 5px;
+}
+
+.header-total {
+  display: flex;
+  padding-right: 5px;
+}
+
+.header-total span {
+  padding-right: 5px;
+}
+
+.wallet-form {
+  align-items: center;
+  border: solid 1px grey;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 4em;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+
+.wallet-form input , select {
+  margin-left: 5px;
+}
+
+.wallet-form button {
+  background: greenyellow;
+  border: 0;
+  border-radius: 5px;
+}
+
+.table thead {
+  align-items: center;
+  border: solid 1px gray;
+  border-radius: 5px;
+  display: flex;
+  font-size: 12px;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+
+.table-text {
+  display: inline;
+  font-size: 12px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.table-button {
+  background: greenyellow;
+  border: 0;
+  border-radius: 5px;
+}

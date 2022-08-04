@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { actionEmail } from '../redux/actions';
+import './Login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -59,34 +60,37 @@ class Login extends React.Component {
   render() {
     // const { buttonOff } = this.state;
     return (
-      <div>
-        <label htmlFor="email">
-          Email:
-          <input
-            name="email"
-            type="email"
-            data-testid="email-input"
-            onChange={ this.handleChange }
-            required
-          />
-        </label>
-        <label htmlFor="password">
-          Senha:
-          <input
-            name="password"
-            type="password"
-            data-testid="password-input"
-            onChange={ this.handleChange }
-            required
-          />
-        </label>
-        <button
-          type="submit"
-          onClick={ this.handleClick }
-          disabled={ !(this.verifyEmail() && this.verifyPassword()) }
-        >
-          Entrar
-        </button>
+      <div className="container">
+        <div className="form-login">
+          <label className="form-label" htmlFor="email">
+            Email:
+            <input
+              name="email"
+              type="email"
+              data-testid="email-input"
+              onChange={ this.handleChange }
+              required
+            />
+          </label>
+          <label className="form-label" htmlFor="password">
+            Senha:
+            <input
+              name="password"
+              type="password"
+              data-testid="password-input"
+              onChange={ this.handleChange }
+              required
+            />
+          </label>
+          <button
+            type="submit"
+            onClick={ this.handleClick }
+            disabled={ !(this.verifyEmail() && this.verifyPassword()) }
+            className="form-button"
+          >
+            Entrar
+          </button>
+        </div>
       </div>
     );
   }

@@ -12,18 +12,18 @@ class Table extends Component {
   render() {
     const { expenses } = this.props;
     return (
-      <div>
+      <div className="table">
         <thead>
           <tr>
-            <th>Descrição</th>
-            <th>Tag</th>
-            <th>Método de pagamento</th>
-            <th>Valor</th>
-            <th>Moeda</th>
-            <th>Câmbio utilizado</th>
-            <th>Valor convertido</th>
-            <th>Moeda de conversão</th>
-            <th>Editar/Excluir</th>
+            <th className="table-text">Descrição</th>
+            <th className="table-text">Tag</th>
+            <th className="table-text">Método de pagamento</th>
+            <th className="table-text">Valor</th>
+            <th className="table-text">Moeda</th>
+            <th className="table-text">Câmbio utilizado</th>
+            <th className="table-text">Valor convertido</th>
+            <th className="table-text">Moeda de conversão</th>
+            <th className="table-text">Editar/Excluir</th>
           </tr>
         </thead>
         <tbody>
@@ -32,23 +32,24 @@ class Table extends Component {
           ) : (
             expenses.map((curr) => (
               <tr key={ curr.id }>
-                <td>{curr.description}</td>
-                <td>{curr.tag}</td>
-                <td>{curr.method}</td>
-                <td>{Number(curr.value).toFixed(2)}</td>
-                <td>{curr.currency}</td>
-                <td>
+                <td className="table-text">{curr.description}</td>
+                <td className="table-text">{curr.tag}</td>
+                <td className="table-text">{curr.method}</td>
+                <td className="table-text">{Number(curr.value).toFixed(2)}</td>
+                <td className="table-text">{curr.currency}</td>
+                <td className="table-text">
                   {Number(curr.exchangeRates[curr.currency].ask).toFixed(2)}
                 </td>
-                <td>
+                <td className="table-text">
                   {Number(
                     curr.exchangeRates[curr.currency].ask * curr.value,
                   ).toFixed(2)}
                 </td>
-                <td>{curr.exchangeRates[curr.currency].name}</td>
-                <td>
+                <td className="table-text">{curr.exchangeRates[curr.currency].name}</td>
+                <td className="table-text">
                   <button
                     type="button"
+                    className="table-button"
                     data-testid="delete-btn"
                     onClick={ () => this.btnDelete(curr.id) }
                   >
