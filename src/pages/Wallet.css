@@ -1,8 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+
 body {
   background: #201b2c;
   border: 0;
   color: white;
+  display: flex;
+  justify-content: center;
   margin: 0;
+  width: 100vw;
 }
 
 .header {
@@ -13,6 +21,7 @@ body {
   height: 2em;
   justify-content: space-between;
   margin-bottom: 5px;
+  width: 100vw;
 }
 
 .header-email {
@@ -49,21 +58,17 @@ body {
   border-radius: 5px;
 }
 
-.table thead {
-  align-items: center;
-  border: solid 1px gray;
-  border-radius: 5px;
-  display: flex;
-  font-size: 12px;
-  justify-content: space-around;
-  margin-bottom: 5px;
+.table {
+  border-collapse: collapse;
 }
 
-.table-text {
-  display: inline;
-  font-size: 12px;
-  margin-left: 6px;
-  margin-right: 6px;
+.table td , .table th {
+  border: solid 1px grey;
+  border-radius: 20px;
+  font-size: 16px;
+  padding: 12px 15px;
+  text-align: center;
+  width: 100vw;
 }
 
 .table-button {

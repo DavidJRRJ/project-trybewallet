@@ -13,7 +13,7 @@ class Table extends Component {
     const { expenses } = this.props;
     return (
       <div className="table">
-        <thead>
+        <thead className="table-header">
           <tr>
             <th className="table-text">Descrição</th>
             <th className="table-text">Tag</th>
@@ -32,21 +32,21 @@ class Table extends Component {
           ) : (
             expenses.map((curr) => (
               <tr key={ curr.id }>
-                <td className="table-text">{curr.description}</td>
-                <td className="table-text">{curr.tag}</td>
-                <td className="table-text">{curr.method}</td>
-                <td className="table-text">{Number(curr.value).toFixed(2)}</td>
-                <td className="table-text">{curr.currency}</td>
-                <td className="table-text">
+                <td className="table-body">{curr.description}</td>
+                <td className="table-body">{curr.tag}</td>
+                <td className="table-body">{curr.method}</td>
+                <td className="table-body">{Number(curr.value).toFixed(2)}</td>
+                <td className="table-body">{curr.currency}</td>
+                <td className="table-body">
                   {Number(curr.exchangeRates[curr.currency].ask).toFixed(2)}
                 </td>
-                <td className="table-text">
+                <td className="table-body">
                   {Number(
                     curr.exchangeRates[curr.currency].ask * curr.value,
                   ).toFixed(2)}
                 </td>
-                <td className="table-text">{curr.exchangeRates[curr.currency].name}</td>
-                <td className="table-text">
+                <td className="table-body">{curr.exchangeRates[curr.currency].name}</td>
+                <td className="table-body">
                   <button
                     type="button"
                     className="table-button"
