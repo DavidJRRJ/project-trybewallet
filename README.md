@@ -22,7 +22,9 @@ Neste projeto, foi verificado se fui capaz de:
 
 * Criar actions assíncronas na sua aplicação React que faz uso de Redux.
 
+## Link para o Deploy
 
+[Projeto Trybewallet](https://project-trybewallet-six.vercel.app/)
 
 ## Tecnologias usadas
 
